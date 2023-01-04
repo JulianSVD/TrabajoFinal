@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from AppPagina.views import *
 from AppUsuarios.views import *
-
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", inicio, name="inicio"),
 
     path("register/", register, name="register" ),
-
+    path("login/", login_request, name="login"),
+    path("logout/", LogoutView.as_view(), name="logout"),
 ]

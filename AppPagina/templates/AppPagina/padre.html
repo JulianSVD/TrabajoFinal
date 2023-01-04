@@ -20,13 +20,16 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
-                <a class="navbar-brand" href="#!"> CookIt!</a>
+                <a class="navbar-brand" href="{% url 'inicio' %}"> CookIt!</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Sobre nosotros...</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">¡Registrarse!</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Ingresar cuenta</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Salir</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -38,13 +41,11 @@
                     <div class="col-lg-6">
                         <div class="text-center my-5">
                             {% block titulo %}
-                        
-                            {% endblock %}
-
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                 <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#">Get Started</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="#features">Saber mas</a>
-                                
+                                {% endblock %}
+
                             </div>
                         </div>
                     </div>
@@ -148,8 +149,8 @@
             <div class="container px-5 my-5 px-5">
                 <div class="text-center mb-5">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                    <h2 class="fw-bolder">A que esperas? Registrarse hoy!</h2>
-                    <p class="lead mb-0">Te estamos esperando...</p>
+                    <h2 class="fw-bolder">Esto no tiene ninguna utilidad!</h2>
+                    <p class="lead mb-0">pero se ve bonito</p>
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
