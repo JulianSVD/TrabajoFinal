@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        {% load static %}
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CookIt! Search for recipes</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'AppPagina/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#!"> CookIt!</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Sobre nosotros...</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">¡Registrarse!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="text-center my-5">
+                            {% block titulo %}
+                        
+                            {% endblock %}
+
+                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#">Get Started</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="#features">Saber mas</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Features section-->
+        <section class="py-5 border-bottom" id="features">
+            <div class="container px-6 my-6">
+                <div class="row gx-5">
+
+                        <div class="col-lg-4 mb-5 mb-lg-0">
+                            
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                            <h2 class="h4 fw-bolder">Cientos de ideas</h2>
+                            <p>Ya sea que cocines para vos o tu familia, tenemos miles recetas de nuestros usuarios que se adaptaran a tu estilo de vida.</p>
+                        </div>
+                        <div class="col-lg-4 mb-5 mb-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                            <h2 class="h4 fw-bolder">Comparte tu plato</h2>
+                            <p>Acaso quieres compartir una antigua receta familiar? O descubriste un plato delicioso por accidente? Subelo para que todo el mundo pueda verlo!</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                            <h2 class="h4 fw-bolder">Se un critico!</h2>
+                            <p>Probaste una receta y te parecio estupenda? O a lo mejor quieres insultar a alguien por crear tal aberracion culinaria? Puedes hacer ambas!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials section-->
+<!-- Pricing section-->
+<section class="bg-light py-5 border-bottom">
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">Algunas reseñas de nuestros usuarios!</h2>
+            <p class="lead mb-0">Podrias ser uno!</p>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <!-- Pricing card free-->
+            <div class="col-lg-6 col-xl-4">
+                <div class="card mb-5 mb-xl-0">
+                    <div class="card-body p-5">
+                        <div class="small text-uppercase fw-bold text-muted">Juanito32</div>
+                        <div class="mb-3">
+
+                            <span class="text-muted">De España</span>
+                        </div>
+                        
+                            <li class="mb-2">
+                                Probe un sanguche de esta pagina que tenia tanto aceite, que mi abuela se cayo mientras lo comia y no ha parado de rodar, llevo un año persiguiendola. Excelente servicio
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-4">
+                <div class="card mb-5 mb-xl-0">
+                    <div class="card-body p-5">
+                        <div class="small text-uppercase fw-bold text-muted">xX_julitoPro_Xx</div>
+                        <div class="mb-3">
+
+                            <span class="text-muted">De Paraguay</span>
+                        </div>
+                        
+                            <li class="mb-2">
+                                Ni la muerte de mi padre fue tan dificil de digerir como el platillo que consegui de esta pagina, Muchas gracias.
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <section class="py-5 border-bottom" id="about">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bolder">Quienes somos?</h2>   
+                    <p class="lead mb-0">Conoce al equipo (yo solo xd) detraz de este proyecto!</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <!-- Testimonial 1-->
+                        <div class="card mb-4">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Este proyecto fue llevado a cabo por un estudiante de CoderHouse, para ser entregado como un proyecto final.
+                                            La intencion de esta pagina es la de poder compartir, ver y reseñar recetas de los distintos usuarios.
+                                        </p>
+                                        <div class="small text-muted">-Julian Servo di Dio, Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+        </section>
+        <!-- Contact section-->
+        <section class="bg-light py-5" id="accounts/signup">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                    <h2 class="fw-bolder">A que esperas? Registrarse hoy!</h2>
+                    <p class="lead mb-0">Te estamos esperando...</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <label for="name">Nombre de usuario</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">Se requiere un nombre</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <label for="email">Direccion de Email</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">Se requiere un Email</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">El Email no es valido.</div>
+                            </div>
+                            <!-- Phone number input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <label for="phone">Numero telefonico</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">Se requiere un numero telefonico</div>
+                            </div>
+                            <!-- Message input-->
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                    <br />
+                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            <!-- Submit Button-->
+                            <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
