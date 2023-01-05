@@ -6,6 +6,7 @@ import datetime
 from AppUsuarios.forms import UsuarioForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate
+from AppPagina.models import *
 
 # Create your views here.
 

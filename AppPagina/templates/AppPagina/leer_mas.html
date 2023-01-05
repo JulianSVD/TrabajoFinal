@@ -1,0 +1,11 @@
+{% extends 'AppPagina/base.html' %}
+
+{% block content %}
+    <h1 class="titulo">{{ posteos.titulo }}</h1>
+
+    <small>Posted at {{ posteos.date_added }}</small>
+
+    <p><strong>{{ posteos.intro }}</strong></p>
+
+    <p>{{ posteos.cuerpo }}</p>
+{% endblock %}
