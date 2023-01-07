@@ -29,5 +29,7 @@ urlpatterns = [
 
     path("blogs/", blogs, name="blogs"),
     path('<slug:slug>/', leer_mas, name="leer_mas"),
+
+    path("BlogFormulario/", BlogFormulario, name="BlogFormulario" ),
     
 ]

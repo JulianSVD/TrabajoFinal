@@ -1,0 +1,15 @@
+{% extends 'AppPagina/base.html' %}
+
+{% block content %}
+<form action="{% url 'BlogFormulario' %}" method="POST">
+                                                
+                                                
+    <table>
+        {{ form.as_table }}
+    </table>
+
+    <input type="submit" value="Crear Blog"> {% csrf_token %}
+
+</form>
+{% endblock %}
+

@@ -43,4 +43,4 @@ def login_request(request):
             return render(request,"AppPagina/login.html", {"form": form, "mensaje" : "Usuario o contraseña incorrectos."})
     else:
         form=AuthenticationForm()
-        return render(request,"AppPagina/login.html",{"form", form})
+        return render(request,"AppPagina/login.html", {"form", form})
