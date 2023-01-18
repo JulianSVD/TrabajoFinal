@@ -125,3 +125,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGOUT_REDIRECT_URL="/register/" #CAMBIAR A INGRESAR CUANDO FUNCIONE!
+
+MEDIA_URL= "/media/"
+MEDIA_ROOT = BASE_DIR / "media"

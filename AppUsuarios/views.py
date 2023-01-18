@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from .models import *
+from .forms import *
 from django.http import HttpResponse
 from django.template import Template, Context, loader
 import datetime
 from AppUsuarios.forms import UsuarioForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from AppPagina.models import *
 
@@ -44,3 +46,24 @@ def login_request(request):
     else:
         form=AuthenticationForm()
         return render(request,"AppPagina/login.html", {"form", form})
+
+@login_required
+def editarperfil(request):
+    usuario=request.user
+
+    if request.method=="POST":
+        form=UserEditForm(request.POST)
+        if form.is_valid():
+            info=form.cleaned_data
+            usuario.email=info["email"]
+            usuario.password1=info["password1"]
+            usuario.password2=info["password2"]
+            usuario.first_name=info["first_name"]
+            usuario.last_name=info["last_name"]
+            usuario.save()
+            return render(request, "AppPagina/inicio.html", {"mensaje":f"Usuario {usuario.username} editado correctamente"})
+        else:
+            return render(request, "AppPagina/editarperfil.html", {"form": form, "nombreusuario":usuario.username} )
+    else:
+        form=UserEditForm(instance=usuario)
+        return render(request, "AppPagina/editarperfil.html", {"form": form})
