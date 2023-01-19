@@ -1,4 +1,5 @@
 {% extends 'AppPagina/base.html' %}
+{% load static %}
 
 {% block content %}
     <h1 class="titulo">{{ posteos.titulo }}</h1>
@@ -8,5 +9,7 @@
     <p><strong>{{ posteos.intro }}</strong></p>
 
     <p>{{ posteos.cuerpo }}</p>
+    <p>{{ post.image }}</p>
+
 {% endblock %}
 

@@ -28,6 +28,7 @@ urlpatterns = [
     path("login/", login_request, name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),
     path("editarperfil/", editarperfil, name="editarperfil"),
+    path("agregarAvatar/", agregarAvatar, name="agregarAvatar"),
 
     path("blogs/", blogs, name="blogs"),
     path('<slug:slug>/', leer_mas, name="leer_mas"),

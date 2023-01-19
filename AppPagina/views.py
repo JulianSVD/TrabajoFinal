@@ -1,29 +1,20 @@
 from django.shortcuts import render
 from AppPagina.models import *
 from AppUsuarios.models import *
+from AppUsuarios.views import *
 from AppPagina.forms import PostForm
 
-
 def inicio(request):
-    return render (request, "AppPagina/inicio.html")
+    return render (request, "AppPagina/inicio.html", {"avatar": obtenerAvatar(request)})
     
 def blogs(request):
-    posts = Post.objects.all()
-    return render(request, "AppPagina/blogs.html", {"posteos": posts})
+    posts = Post.objects.all()    
+    return render(request, "AppPagina/blogs.html", {"posteos": posts, "avatar": obtenerAvatar(request)})
 
 
 def leer_mas(request, slug):
     posts = Post.objects.get(slug=slug)
     return render(request, "AppPagina/leer_mas.html", {"posteos": posts})
-
-
-def obtenerAvatar(request): #Sacado de min 45 clase 24 POR LAS DUDAS
-    lista=Avatar.objects.filter(user=request.user)
-    if len(lista)!=0:
-        avatar=lista[0].imagen.url
-    else:
-        avatar="/media/avatars/avatardefault.png"
-        return avatar
 
 
 def BlogFormulario(request):

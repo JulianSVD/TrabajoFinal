@@ -11,19 +11,20 @@
                                 <div class="container px-5 my-5 px-5">
                                     <div class="text-center mb-5">
                                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                                        <h2 class="fw-bolder">Ingresa tus datos</h2>                                        
+                                        <h2 class="fw-bolder">Agregar avatar de: {{ usuario.username }} </h2>
+                                        
                                             {{ mensaje }}
                                             {{ error }}
                                             <!--action: con que vista voy a procesar lo que mandan-->
-                                            <form action="{% url 'login' %}" method="POST">
+                                            <form action="{% url 'agregarAvatar' %}" method="POST" enctype="multipart/form-data">
                                                 
                                                 
                                                 <table>
-                                                    {{ form.as_p }}
+                                                    {{ form.as_table }}
                                                 </table>
 
-                                                <input type="submit" value="Ingresar Usuario"> {% csrf_token %}
-                                                
+                                                <input type="submit" value="Agregar Avatar"> {% csrf_token %}
+                                            
                                             </form>
                                     <div class="row gx-5 justify-content-center">
                                         <div class="col-lg-6">

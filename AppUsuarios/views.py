@@ -12,6 +12,13 @@ from AppPagina.models import *
 
 # Create your views here.
 
+def obtenerAvatar(request): #Sacado de min 45 clase 24
+    lista=Avatar.objects.filter(user=request.user)
+    if len(lista)!=0:
+        avatar=lista[0].imagen.url
+    else:
+        avatar="/media/avatars/imagendefault.png"
+    return avatar
 
 #Vista de registro
 def register(request):
@@ -29,23 +36,33 @@ def register(request):
 
 #Vista de Login
 def login_request(request):
-    if request.method=="POST":
-        form=AuthenticationForm(request, data=request.POST)
+    
+    if request.method == "POST":
+        form =AuthenticationForm(request, data = request.POST)
+
         if form.is_valid():
             info=form.cleaned_data
             usu=info["username"]
             clave=info["password"]
+
             usuario=authenticate(username=usu, password=clave)
+
             if usuario is not None:
                 login(request, usuario)
+
                 return render(request, "AppPagina/inicio.html", {"mensaje": f"Usuario {usu} logueado correctamente"})
             else:
+
                 return render(request, "AppPagina/inicio.html", {"mensaje": "Usuario o contraseña No se encuentra"})
+        
         else:
+            
             return render(request,"AppPagina/login.html", {"form": form, "mensaje" : "Usuario o contraseña incorrectos."})
-    else:
-        form=AuthenticationForm()
-        return render(request,"AppPagina/login.html", {"form", form})
+    
+    form=AuthenticationForm()
+    
+    return render(request,"AppPagina/login.html", {"form": form})
+
 
 @login_required
 def editarperfil(request):
@@ -67,3 +84,19 @@ def editarperfil(request):
     else:
         form=UserEditForm(instance=usuario)
         return render(request, "AppPagina/editarperfil.html", {"form": form})
+
+def agregarAvatar(request):
+    if request.method=="POST":
+        form=AvatarForm(request.POST, request.FILES)
+        if form.is_valid():
+            avatar=Avatar(user=request.user, imagen=request.FILES["imagen"])
+            avatarViejo=Avatar.objects.filter(user=request.user)
+            if len(avatarViejo)>0:
+                avatarViejo[0].delete()#Si se quiere añadir una nueva imagen, borra la anterior
+            avatar.save()
+            return render(request, "AppPagina/inicio.html", {"mensaje": "Avatar Agregado correctamente"})
+        else:
+            return render(request, "AppPagina/agregarAvatar.html", {"form": form, "usuario": request.user, "mensaje":"Error al agregar avatar."})
+    else:
+        form=AvatarForm()
+        return render(request, "AppPagina/AgregarAvatar.html", {"form": form, "usuario": request.user})
