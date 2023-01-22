@@ -13,3 +13,9 @@ class PostForm(forms.ModelForm):
         User,
         on_delete=models.CASCADE,
     )
+
+class MensajeForm(forms.ModelForm):
+    emisor = models.ForeignKey(User, related_name="emisor", on_delete=models.CASCADE)
+    receptor = models.ForeignKey(User, related_name="receptor", on_delete=models.CASCADE) 
+    cuerpo = forms.TextInput()
+    date_added = forms.DateTimeField()

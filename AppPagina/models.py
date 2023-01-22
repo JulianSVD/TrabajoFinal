@@ -18,3 +18,10 @@ class Post(models.Model):
     class Meta:
         ordering = ["-date_added"]
     
+class Mensaje(models.Model):
+     emisor = models.ForeignKey(User, related_name="emisor", on_delete=models.CASCADE)
+     receptor = models.ForeignKey(User, related_name="receptor", on_delete=models.CASCADE)
+     cuerpo = models.TextField(max_length=500)
+     date_added = models.DateTimeField(auto_now_add=True)
+     class Meta:
+        ordering = ["-date_added"]

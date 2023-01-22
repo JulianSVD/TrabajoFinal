@@ -4,12 +4,11 @@
 {% block content %}
     <h1 class="titulo">{{ posteos.titulo }}</h1>
 
-    <small>Posted at {{ posteos.date_added }}</small>
+    <small>Enviado el {{ posteos.date_added }}</small>
 
     <p><strong>{{ posteos.intro }}</strong></p>
 
     <p>{{ posteos.cuerpo }}</p>
-    <p>{{ post.image }}</p>
-
+    <p>{{ posteos.image }}</p>
 {% endblock %}
 

@@ -1,0 +1,12 @@
+{% extends 'AppPagina/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1 class="titulo">{{ mensajes.emisor }}</h1>
+
+    <small>enviado el {{ mensajes.date_added }}</small>
+
+    <p><strong>{{ mensajes.cuerpo }}</strong></p>
+
+{% endblock %}
+

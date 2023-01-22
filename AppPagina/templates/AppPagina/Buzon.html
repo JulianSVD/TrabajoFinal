@@ -1,0 +1,18 @@
+{% extends 'AppPagina/base.html' %}
+{% load static %}
+
+{% block content %}
+{% for mensaje in mensajes %}   
+
+<div>
+    <form method="GET" class="form" action="")>
+
+{{mensajes.cuerpo}}  
+Posted By: {{mensajes.emisor}}  
+Sent To: {{mensajes.receptor}}  
+Sent On: {{mensajes.date_added}}  
+</div>  
+{% endfor %}  
+
+{% endblock %}
+

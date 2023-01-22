@@ -32,8 +32,12 @@ urlpatterns = [
 
     path("blogs/", blogs, name="blogs"),
     path('<slug:slug>/', leer_mas, name="leer_mas"),
+    path("eliminarBlog/<id>", eliminarBlog, name="eliminarBlog"),
+    #path("editarBlog", editarBlog, name="editarBlog"),
+    path("BlogFormulario/", BlogFormulario, name="BlogFormulario" ),
 
-    path("BlogFormulario/", BlogFormulario, name="BlogFormulario" ),    
+    path("buzon/", buzon, name="buzon"),
+        
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
